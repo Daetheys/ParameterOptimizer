@@ -1,13 +1,13 @@
 import time
 from tqdm import tqdm
-def optimize(config_lists,trial,nb_trials=10):
+def optimize(config_lists,trial,nb_trials=10,nb_iteration=3):
     #Compute default value for every parameter
     default_config = {}
     doc = {}
     for param_name in config_lists:
         default_config[param_name] = config_lists[param_name][0]
     #Optimize each parameter one by one
-    for it in range(3):
+    for it in range(nb_iteration):
         doc = {}
         for param_name in config_lists:
             print(param_name)
